@@ -1,9 +1,14 @@
-import { Inter } from 'next/font/google';
+import { Inter as FontSans } from 'next/font/google';
+
+import { cn } from '@client/lib';
 
 import type { Metadata } from 'next';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+export const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
 
 export const metadata: Metadata = {
   title: 'Beatbar',
@@ -16,7 +21,12 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => (
   <html lang="en">
-    <body className={inter.className}>
+    <body
+      className={cn(
+        'min-h-screen bg-background font-sans antialiased',
+        fontSans.variable,
+      )}
+    >
       <main>{children}</main>
     </body>
   </html>
