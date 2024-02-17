@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from './config/config.module';
 import { ServerEnv, serverEnvSchema } from './config/env';
+import { TrpcModule } from './trpc/trpc.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ServerEnv, serverEnvSchema } from './config/env';
       isGlobal: true,
     }),
     ConfigModule,
+    TrpcModule,
   ],
   controllers: [AppController],
   providers: [AppService],

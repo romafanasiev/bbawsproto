@@ -3,13 +3,13 @@ import { z } from 'zod';
 
 export const env = createEnv({
   server: {
-    SERVER_PORT: z.coerce.number(),
+    SERVER_URL: z.string(),
   },
   client: {
     NEXT_PUBLIC_TEST: z.enum(['development', 'production']),
   },
   runtimeEnv: {
-    SERVER_PORT: process.env.SERVER_PORT,
+    SERVER_URL: process.env.SERVER_URL,
     NEXT_PUBLIC_TEST: process.env.NEXT_PUBLIC_TEST,
   },
 });

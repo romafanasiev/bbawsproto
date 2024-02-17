@@ -54,7 +54,7 @@
     ],
     "no-console": ["warn"],
     "import/no-unresolved": "error",
-    "import/extensions": [2, "never"],
+    "import/extensions": [2, "never", { "ignorePackages": true }],
     "import/order": [
       "error",
       {
@@ -112,7 +112,8 @@
       "error",
       {
         "devDependencies": true,
-        "optionalDependencies": false
+        "optionalDependencies": false,
+        "packageDir": [".", "./apps/client", "./apps/server"]
       }
     ],
     "@typescript-eslint/interface-name-prefix": "off",
